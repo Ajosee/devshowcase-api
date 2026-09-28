@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# URL oficial corrigida com o endereço completo e a porta por extenso para o Render funcionar
+# Apenas trocamos o endereço para o Render achar o seu banco de dados que já tem os dados salvos
 SQLALCHEMY_DATABASE_URL = "postgresql://postgres.lvaqcckibeojqecxqptx:AntonioMaximilio2026@://supabase.com"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
