@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# URL oficial do Pooler do Supabase exigida para o deploy do Render funcionar
+# URL oficial e correta com o endereço completo e a porta para o Render localizar o seu banco de dados
 SQLALCHEMY_DATABASE_URL = "postgresql://postgres.lvaqcckibeojqecxqptx:AntonioMaximilio2026@://supabase.com"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
