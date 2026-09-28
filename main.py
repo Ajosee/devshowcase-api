@@ -7,6 +7,11 @@ from typing import List, Optional
 
 import models
 import schemas
+import os
+
+# 🌟 CONEXÃO DIRETA PARA O RENDER: Injeta a porta e o link estável antes de ler o banco
+os.environ["DATABASE_URL"] = "postgresql://postgres.lvaqcckibeojqecxqptx:AntonioMaximilio2026@://supabase.com"
+
 from database import engine, get_db
 
 # 🌟 ATUALIZADO: Cria as tabelas diretamente no PostgreSQL do Supabase na nuvem
@@ -31,11 +36,11 @@ def custom_http_exception_handler(request: Request, exc: HTTPException):
             "mensagem": exc.detail
         }
     )
-
 @app.exception_handler(RequestValidationError)
 def validation_exception_handler(request: Request, exc: RequestValidationError):
     erros_formatados = []
     for erro in exc.errors():
+
         campo = " -> ".join([str(x) for x in erro["loc"] if x != "body"])
         erros_formatados.append(f"Campo '{campo}': {erro['msg']}")
     
